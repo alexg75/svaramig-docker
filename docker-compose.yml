@@ -1,0 +1,44 @@
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    volumes:
+      - /Users/alex/projects/docker/data  :/data/db
+    ports:
+      - 27017:27017            
+    # command:
+    #   - --storageEngine
+    #   - wiredTiger
+    #   - --auth      
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH_ENABLED: true
+      ME_CONFIG_BASICAUTH_USERNAME: mongoexpressuser
+      ME_CONFIG_BASICAUTH_PASSWORD: mongoexpresspass
+
+  svaramig-web-services:
+    image: svaramig-web-services:0.0.5.2
+    container_name: svaramig-web-services
+    ports:
+      - 8080:8080     
+    environment:
+      DB_HOST: rp-db
+      DB_PORT: 27017
+      
+  svaramig-web-client:
+    image: svaramig-web-client:0.0.1.1
+    container_name: svaramig-web-client
+    ports:
+      - 3000:3000
+
