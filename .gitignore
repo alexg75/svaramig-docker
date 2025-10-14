@@ -1,1 +1,4 @@
 svaramig-web-services/*.jar
+svaramig-web-client/svaramig
+../.DS_Store
+data/*

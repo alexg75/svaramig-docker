@@ -4,7 +4,7 @@ services:
     container_name: mongo
     restart: always
     volumes:
-      - /Users/alex/projects/docker/data  :/data/db
+      - /Users/alex/projects/svaramig-docker/data  :/data/db
     ports:
       - 27017:27017            
     # command:
@@ -28,16 +28,16 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: mongoexpresspass
 
   svaramig-web-services:
-    image: svaramig-web-services:0.0.5.2
+    image: rp-db:5000/svaramig-web-services:0.0.5.1
     container_name: svaramig-web-services
     ports:
       - 8080:8080     
     environment:
-      DB_HOST: rp-db
+      DB_HOST: mongo
       DB_PORT: 27017
       
   svaramig-web-client:
-    image: svaramig-web-client:0.0.1.1
+    image: svaramig-web-client:0.0.5.2
     container_name: svaramig-web-client
     ports:
       - 3000:3000
