@@ -37,7 +37,7 @@ services:
       DB_PORT: 27017
       
   svaramig-web-client:
-    image: svaramig-web-client:0.0.5.2
+    image: rp-db:5000/svaramig-web-client:0.0.5.2.LOCAL
     container_name: svaramig-web-client
     ports:
       - 3000:3000
