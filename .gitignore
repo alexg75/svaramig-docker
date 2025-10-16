@@ -1,4 +1,5 @@
 svaramig-web-services/*.jar
 svaramig-web-client/svaramig
-../.DS_Store
-data/*
+iot-ui/iot-ui
+.DS_Store
+data  

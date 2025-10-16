@@ -9,7 +9,7 @@ fi
 
 if [ -z "$2" ]; then
   echo "No environment specified. Default to LIVE"
-elif [[ "$2"=="LOCAL" ]]; then
+elif [[ "$2" = "LOCAL" ]]; then
   REMOTE_SERVICE_HOST=192.168.178.177
   REMOTE_SERVICE_PORT=8080    
 fi
@@ -23,7 +23,7 @@ sed -i.bak "s/XXX_PORT_XXX/${REMOTE_SERVICE_PORT}/g" ./svaramig/src/utils/remote
 
 docker build --tag=svaramig-web-client:$1.$IMAGE_VERSION .
 
-if [[ "$2"=="LOCAL" ]]; then
+if [[ "$2" = "LOCAL" ]]; then
   docker image tag svaramig-web-client:$1.$IMAGE_VERSION rp-db:5000/svaramig-web-client:$1.$IMAGE_VERSION.LOCAL
   echo "Local images do not get pushed to the registry"
   exit 0

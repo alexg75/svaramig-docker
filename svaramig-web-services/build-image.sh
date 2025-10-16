@@ -10,8 +10,8 @@ cp -p /Users/alex/projects/svaramig-web-services/target/svaramig-web-services-$1
 
 docker build --tag=svaramig-web-services:$1.$IMAGE_VERSION .
 
-# docker image tag svaramig-web-services:$1.$IMAGE_VERSION rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
+docker image tag svaramig-web-services:$1.$IMAGE_VERSION rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
 
-# docker image push rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
+docker image push rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
 
-# docker push rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
+docker push rp-db:5000/svaramig-web-services:$1.$IMAGE_VERSION
