@@ -2,7 +2,7 @@ readonly IMAGE_VERSION=1
 readonly SERVICE_NAME=iot-ui
 readonly REGISTRY_HOST=rp-db
 readonly REGISTRY_PORT=5000
-REMOTE_SERVICE_HOST=rp-alights
+REMOTE_SERVICE_HOST=rp-lights
 REMOTE_SERVICE_PORT=8080
 
 if [ -z "$1" ]; then
