@@ -19,3 +19,18 @@ set users:
 - db.system.users.find() to make sure that the user has been created correctly
 - exit
 - exit
+
+Docker
+======
+Error response from daemon: Get "https://rp-db:5000/v2/": http: server gave HTTP response to HTTPS client
+How to sort this error:
+
+sudo vi /etc/docker/daemon.json
+{
+  "insecure-registries": [
+    "rp-db:5000"
+  ]
+}
+
+sudo service docker restart
+
