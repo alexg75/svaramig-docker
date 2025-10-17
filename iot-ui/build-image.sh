@@ -1,4 +1,4 @@
-readonly IMAGE_VERSION=1
+readonly IMAGE_VERSION=2
 readonly SERVICE_NAME=iot-ui
 readonly REGISTRY_HOST=rp-db
 readonly REGISTRY_PORT=5000
