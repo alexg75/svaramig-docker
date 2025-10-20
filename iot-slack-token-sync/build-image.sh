@@ -16,18 +16,16 @@ cp -p ../../iot-slack-token-sync/requirements.txt  ./target
 cp -p ../../iot-slack-token-sync/token.json  ./target
 cp -p ../../iot-common/logger.py ./target
 
-docker build --tag=test .
+docker build --tag=$SERVICE_NAME:$1.$IMAGE_VERSION .
 
-# docker build --tag=$SERVICE_NAME:$1.$IMAGE_VERSION .
+if [[ "${2}" = "LOCAL" ]]; then
+  docker image tag $SERVICE_NAME:$1.$IMAGE_VERSION $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION.LOCAL
+  echo "Local images do not get pushed to the registry"
+  exit 0
+fi
 
-# if [[ "${2}" = "LOCAL" ]]; then
-#   docker image tag $SERVICE_NAME:$1.$IMAGE_VERSION $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION.LOCAL
-#   echo "Local images do not get pushed to the registry"
-#   exit 0
-# fi
+docker image tag $SERVICE_NAME:$1.$IMAGE_VERSION $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
 
-# docker image tag $SERVICE_NAME:$1.$IMAGE_VERSION $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
+docker image push $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
 
-# docker image push $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
-
-# docker push $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
+docker push $REGISTRY_HOST:$REGISTRY_PORT/$SERVICE_NAME:$1.$IMAGE_VERSION
