@@ -15,6 +15,8 @@ cp -p ../../iot-slack-token-sync/refresh-token.py  ./target
 cp -p ../../iot-slack-token-sync/requirements.txt  ./target
 cp -p ../../iot-slack-token-sync/token.json  ./target
 cp -p ../../iot-common/logger.py ./target
+cp -p ../../iot-common/tokenUtils.py ./target
+
 
 docker build --tag=$SERVICE_NAME:$1.$IMAGE_VERSION .
 
