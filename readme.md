@@ -34,3 +34,7 @@ sudo vi /etc/docker/daemon.json
 
 sudo service docker restart
 
+Slack Token
+===========
+The tocken in iot-slack-token-sync is a fake one. After the service deployment, it needs to be refreshed manually
+
