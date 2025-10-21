@@ -2,5 +2,8 @@ svaramig-web-services/*.jar
 svaramig-web-client/svaramig
 iot-ui/iot-ui
 iot-slack-token-sync/target
+iot-consumer-conservatory-values/target
 .DS_Store
-data  
+data
+data/*
+.idea/
