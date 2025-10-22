@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -y cron && apt-get install -y vim && apt-g
 # TODO see what line does and matbe append it to the line above 
 # && rm -rf /var/lib/apt/lists/*
 
-RUN (crontab -l ; echo "* * * * * /usr/local/bin/python3 /refresh-token.py") | sort - | uniq - | crontab -
+RUN (crontab -l ; echo "0 */6 * * * /usr/local/bin/python3 /refresh-token.py") | sort - | uniq - | crontab -
 
 CMD ["cron","-f"]
