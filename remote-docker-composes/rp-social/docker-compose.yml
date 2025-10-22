@@ -1,0 +1,17 @@
+services:
+  iot-consumer-config:
+    image: rp-db:5000/iot-consumer-config:0.0.1.1 
+    container_name: iot-consumer-config
+    restart: always
+  iot-consumer-conservatory-value:
+    image: rp-db:5000/iot-consumer-conservatory-values:0.0.1.1
+    container_name: iot-consumer-conservatory-values
+    restart: always
+  iot-consumer-device:
+    image: rp-db:5000/iot-consumer-device:0.0.1.1
+    container_name: iot-consumer-device
+    restart: always
+  iot-consumer-error:
+    image: rp-db:5000/iot-consumer-error:0.0.1.1
+    container_name: iot-consumer-error
+    restart: always
