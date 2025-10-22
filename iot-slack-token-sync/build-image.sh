@@ -1,4 +1,4 @@
-readonly IMAGE_VERSION=1
+readonly IMAGE_VERSION=2
 readonly SERVICE_NAME=iot-slack-token-sync
 readonly REGISTRY_HOST=rp-db
 readonly REGISTRY_PORT=5000
@@ -13,10 +13,9 @@ rm -fR target
 mkdir target
 cp -p ../../iot-slack-token-sync/refresh-token.py  ./target
 cp -p ../../iot-slack-token-sync/requirements.txt  ./target
-cp -p ../../iot-slack-token-sync/token.json  ./target
+# cp -p ../../iot-slack-token-sync/token.json  ./target
 cp -p ../../iot-common/logger.py ./target
 cp -p ../../iot-common/tokenUtils.py ./target
-
 
 docker build --tag=$SERVICE_NAME:$1.$IMAGE_VERSION .
 

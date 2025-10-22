@@ -3,6 +3,7 @@ svaramig-web-client/svaramig
 iot-ui/iot-ui
 iot-slack-token-sync/target
 iot-consumer-conservatory-values/target
+iot-social-message-consumer/target
 .DS_Store
 data
 data/*
