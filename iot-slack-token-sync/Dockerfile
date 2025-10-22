@@ -2,7 +2,6 @@
 FROM python:3.13.9-slim
 COPY ./target/*.py .
 COPY ./target/requirements.txt .
-# COPY ./target/token.json /slack/token.json
 
 RUN mkdir /slack
 RUN chmod 775 /slack
