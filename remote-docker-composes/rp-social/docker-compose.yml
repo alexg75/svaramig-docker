@@ -16,8 +16,14 @@ services:
     container_name: iot-consumer-error
     restart: always
   iot-slack-token-sync:
-    image: rp-db:5000/iot-slack-token-sync:0.0.3.2
+    image: rp-db:5000/iot-slack-token-sync:0.0.4.2
     container_name: iot-slack-token-sync
     restart: always
     volumes:
-      - /home/alex/lab/slack  :/slack    
+      - /home/alex/lab/slack:/slack    
+  iot-social-message-consumer :
+    image: rp-db:5000/iot-social-message-consumer :0.0.3.2    
+    container_name: iot-social-message-consumer 
+    restart: always
+    volumes:
+      - /home/alex/lab/slack:/slack               

@@ -3,7 +3,9 @@ FROM python:3.13.9-slim
 COPY ./target/*.py .
 COPY ./target/*.sh .
 COPY ./target/requirements.txt .
-COPY ./target/token.json .
+
+RUN mkdir /slack
+RUN chmod 775 /slack
 
 # RUN pip install requests beautifulsoup4 python-dotenv
 RUN pip install --no-cache-dir -r requirements.txt
@@ -12,4 +14,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y cron && apt-get install -y vim && apt-get install bash
 
 CMD /start-consumers.sh
-# CMD  /test.sh
