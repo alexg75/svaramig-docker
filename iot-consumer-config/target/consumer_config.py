@@ -2,6 +2,7 @@ from kafka import KafkaConsumer
 from json import loads
 import messageService
 import logger
+import configUtils
 
 log = logger.setup_logger("consnumer_config")
 
@@ -20,4 +21,5 @@ consumer = KafkaConsumer(
 for message in consumer:
     message = message.value
     messageService.publish_message(CHANNEL_NAME, message)
+    configUtils.persist_config_as_json(message)
     log.info(f"sending {message} to {CHANNEL_NAME}")

@@ -3,6 +3,10 @@ FROM python:3.13.9-slim
 COPY ./target/*.py .
 COPY ./target/requirements.txt .
 
+RUN mkdir /iot
+RUN chmod 775 /iot
+RUN touch /iot/config.json
+
 # RUN pip install requests beautifulsoup4 python-dotenv
 RUN pip install --no-cache-dir -r requirements.txt
 
