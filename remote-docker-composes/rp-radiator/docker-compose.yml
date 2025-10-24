@@ -1,0 +1,5 @@
+services:
+  iot-consumer-conservatory-values-for-device:
+    image: rp-db:5000/iot-consumer-conservatory-values-for-device:0.0.1.1 
+    container_name: iot-consumer-conservatory-values-for-device
+    restart: always
