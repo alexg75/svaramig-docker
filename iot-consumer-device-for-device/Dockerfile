@@ -17,4 +17,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y cron && apt-get install -y vim && apt-get install bash
 
 CMD ["./start-consumers.sh"]
-

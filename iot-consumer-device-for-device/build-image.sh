@@ -1,5 +1,5 @@
 readonly IMAGE_VERSION=3
-readonly SERVICE_NAME=iot-consumer-conservatory-values-for-device
+readonly SERVICE_NAME=iot-consumer-device-for-device
 readonly REGISTRY_HOST=rp-db
 readonly REGISTRY_PORT=5000
 
@@ -12,9 +12,9 @@ fi
 rm -fR target
 mkdir target
 cp -p ../../iot-common/*.py ./target
-cp -p ../../iot-consumer-conservatory-values-for-device/*.py ./target
-cp -p ../../iot-consumer-conservatory-values-for-device/requirements.txt ./target
-cp -p ../../iot-consumer-conservatory-values-for-device/*.sh ./target
+cp -p ../../iot-consumer-device-for-device/*.py ./target
+cp -p ../../iot-consumer-device-for-device/requirements.txt ./target
+cp -p ../../iot-consumer-device-for-device/*.sh ./target
 
 docker build --tag=$SERVICE_NAME:$1.$IMAGE_VERSION .
 
