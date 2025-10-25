@@ -1,0 +1,7 @@
+services:
+  iot-ui:
+    image: rp-db:5000/iot-ui:0.0.2.2
+    container_name: iot-ui
+    ports:
+      - 80:3000
+    restart: always
