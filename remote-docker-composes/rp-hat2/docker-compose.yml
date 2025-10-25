@@ -1,0 +1,5 @@
+services:
+  iot-producer-config:
+    image: rp-db:5000/iot-producer-config:0.0.6.3
+    container_name: iot-producer-config
+    network_mode: host
