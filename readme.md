@@ -38,3 +38,7 @@ Slack Token
 ===========
 The tocken in iot-slack-token-sync is a fake one. After the service deployment, it needs to be refreshed manually
 
+iot-producer-config
+===================
+Discover.discover() in iot-producer-config.py does not work under Docker on a Mac
+
