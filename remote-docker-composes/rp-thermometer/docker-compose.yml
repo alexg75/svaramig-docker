@@ -1,0 +1,5 @@
+services:
+  iot-producer-conservatory-values:
+    image: rp-db:5000/iot-producer-conservatory-values:0.0.1.1
+    container_name: iot-producer-conservatory-values
+    restart: always

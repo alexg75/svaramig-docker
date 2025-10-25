@@ -6,6 +6,8 @@ iot-consumer-conservatory-values/target
 iot-social-message-consumer/target
 iot-consumer-conservatory-values-for-device/target
 iot-consumer-device-for-device/target
+iot-producer-config/target
+iot-producer-conservatory-values/target
 .DS_Store
 data
 data/*
